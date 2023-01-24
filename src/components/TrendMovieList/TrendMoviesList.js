@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MovieList, MovieListItem } from './TrendMoviesList.styled';
 
-export const MoviesList = ({ movies, location }) => {
+export const MoviesList = ({ movies }) => {
+  const location = useLocation();
   
   return (
     <MovieList>

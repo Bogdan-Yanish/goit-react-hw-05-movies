@@ -11,18 +11,19 @@ export default function Movies() {
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    let filmName = searchParams.get('query') ?? '';
-    if (filmName === '') {
+    let movieName = searchParams.get('query') ?? '';
+    if (movieName === '') {
       return;
     } else {
 
       getSearchMovies({
-        query: filmName,
+        query: movieName,
         page: 1,
       }).then(result => {
         setSearchResult(result.data.results);
       });
     }
+
   }, [searchParams]);
 
   const handleSubmit = value => {

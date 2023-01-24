@@ -11,7 +11,8 @@ import { scrollOptions, scroll } from 'components/Scroll/Scroll';
 export default function DetailsMovies() {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState();
-  const location = useLocation().state?.from ?? '/';
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     getDetailsMovie(movieId).then(result => {
@@ -27,7 +28,7 @@ export default function DetailsMovies() {
 
   return (
     <MovieData>
-      <BackLink to={location}>
+      <BackLink to={backLinkHref}>
         <BackLinkIcon />
         Back 
       </BackLink>
