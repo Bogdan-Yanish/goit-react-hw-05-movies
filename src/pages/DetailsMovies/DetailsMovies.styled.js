@@ -22,23 +22,26 @@ export const MovieInfoTitle = styled.h2`
 `;
 
 export const Link = styled(NavLink)`
-padding: 8px 16px;
-border-radius: 4px;
-text-decoration: none;
-color: black;
-font-weight: 500;
-background-color: lightgrey;
-margin-bottom: 10px;
+  display:block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  background-color: lightgrey;
+  margin-bottom: 10px;
 
-&.active {
-  color: white;
-  background-color: ${p => p.theme.colors.accent};
-}
+  &.active {
+    color: white;
+    background-color: ${p => p.theme.colors.accent};
+  }
 
-:hover:not(.active),
-:focus-visible:not(.active) {
-  background-color: ${p => p.theme.colors.accent};
-  color: ${p => p.theme.colors.white};
-}
+  :hover:not(.active),
+  :focus-visible:not(.active) {
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+  }
 }
 `

@@ -11,7 +11,7 @@ export const BackLink = styled(Link)`
   padding: 5px;
   color: ${p => p.theme.colors.text};
   text-transform: uppercase;
-  background-color: #dde1e7;
+  background-color: lightgrey;
   border-radius: 25px;
   box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
   transition: color 450ms ease-in-out;
