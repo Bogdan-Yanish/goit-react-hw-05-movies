@@ -33,7 +33,7 @@ export const PreInfoTitle = styled.h3`
 `;
 
 export const RatingStyled = styled.p `
-  width: 80px;
+  width: 75px;
   text-align: center;
   padding: 5px;
   border-radius: 25px;
