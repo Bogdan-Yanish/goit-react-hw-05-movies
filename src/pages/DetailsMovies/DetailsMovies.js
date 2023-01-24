@@ -1,11 +1,12 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { getDetailsMovie } from 'services/api';
-import { MoveInfoTitle } from './DetailsMovies.styled';
+import { MovieInfoTitle } from './DetailsMovies.styled';
 import { MovieInfo } from 'components/MoveItem/MovieItem';
 import {  BackLink, BackLinkIcon } from 'components/CommonStyles/BackLink.styled';
 import { LoaderSpinner } from 'components/Loader/Loader';
 import { MovieData, AddListItem, Link  } from './DetailsMovies.styled';
+import { scrollOptions, scroll } from 'components/Scroll/Scroll';
 
 export default function DetailsMovies() {
   const { movieId } = useParams();
@@ -18,6 +19,12 @@ export default function DetailsMovies() {
     });
   }, [movieId]);
 
+  useEffect(() => {
+    scroll.scrollToBottom(scrollOptions);
+  }, []);
+
+  if (!movieInfo) return null;
+
   return (
     <MovieData>
       <BackLink to={location}>
@@ -27,7 +34,7 @@ export default function DetailsMovies() {
       {movieInfo && (
         <div>
           <MovieInfo movie={movieInfo} />
-          <MoveInfoTitle>Addictional information:</MoveInfoTitle>
+          <MovieInfoTitle>Addictional information:</MovieInfoTitle>
           <ul
             style={{
               display: 'flex',

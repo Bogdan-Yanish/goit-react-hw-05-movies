@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCreditMovie } from 'services/api';
 import { CastList, CastItem, CastImg, CastName } from 'components/Cast/Cast.styled';
+import { scrollOptions, scroll } from 'components/Scroll/Scroll';
 
 
 export default function Cast() {
@@ -13,6 +14,10 @@ export default function Cast() {
         setCredits(result.data.cast);
       });
     }, [movieId]);
+
+    useEffect(() => {
+      scroll.scrollToBottom(scrollOptions);
+    }, []);
 
     if (!credits) return null;
 

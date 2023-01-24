@@ -13,7 +13,7 @@ export const AddListItem = styled.li`
   margin-bottom: 20px;
 `;
 
-export const MoveInfoTitle = styled.h2`
+export const MovieInfoTitle = styled.h2`
   color: ${p => p.theme.colors.title};
   text-transform: uppercase;
   display: flex;

@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getReviewsMovie } from 'services/api';
 import { ReviewsItem, ReviewsTitle } from 'components/Reviews/Reviews.styled';
+import { scrollOptions, scroll } from 'components/Scroll/Scroll';
 
 
 export default function Reviews() {
@@ -14,7 +15,9 @@ export default function Reviews() {
     });
   }, [movieId]);
 
-  // return <div>{reviews.length > 0 && <ReviewsList reviews={reviews} />}</div>;
+  useEffect(() => {
+    scroll.scrollToBottom(scrollOptions);
+  }, []);
 
   return (
     <ul>
