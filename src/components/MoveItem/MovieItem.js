@@ -6,6 +6,7 @@ import {
   MovieInfoTitle,
   MovieInfoBlock,
   PreInfoTitle,
+  RatingStyled
 } from './MovieItem.styled';
 
 export const MovieInfo = ({ movie }) => {
@@ -31,7 +32,8 @@ export const MovieInfo = ({ movie }) => {
           ({movieDateRelease})
         </MovieInfoTitle>
         <MovieInfoBlock>
-        <PreInfoTitle>User Score:</PreInfoTitle> {movieRating}
+        <PreInfoTitle>User Score:</PreInfoTitle> 
+        <RatingStyled>{movieRating}</RatingStyled>
         </MovieInfoBlock>
         <MovieInfoBlock>
           <PreInfoTitle>Overview:</PreInfoTitle> {overview}

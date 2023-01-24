@@ -11,7 +11,7 @@ export default function Movies() {
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    let filmName = searchParams.get('name') ?? '';
+    let filmName = searchParams.get('query') ?? '';
     if (filmName === '') {
       return;
     } else {
@@ -30,14 +30,14 @@ export default function Movies() {
       toast('Please, enter movie name!', {});
       return;
     } else {
-      const nextParams = value.query !== '' ? { name: value.query } : {};
+      const nextParams = value.query !== '' ? { query: value.query } : {};
       setSearchParams(nextParams);
     }
   };
 
   return (
     <MoviesContainer>
-      <SearchForm onSubmit={handleSubmit} value={searchParams.get('name')} />
+      <SearchForm onSubmit={handleSubmit} value={searchParams.get('query')}/>
       <MoviesList movies={searchResult} />
     </MoviesContainer>
   );

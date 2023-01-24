@@ -26,7 +26,20 @@ export const MovieInfoBlock = styled.div`
   color: ${p => p.theme.colors.title};
 `;
 
-export const PreInfoTitle = styled.h5`
+export const PreInfoTitle = styled.h3`
+  font-size: 12px;
   text-transform: uppercase;
   color: ${p => p.theme.colors.title};
 `;
+
+export const RatingStyled = styled.p `
+  width: 80px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  background-color: lightgrey;
+  margin-top: 5px;
+`
